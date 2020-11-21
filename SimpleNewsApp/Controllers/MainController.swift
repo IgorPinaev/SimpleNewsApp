@@ -11,6 +11,7 @@ import CoreData
 class MainController: UIViewController {
     private let customView = MainView()
     private let articlesService = ArticlesService()
+    
     private var frcSerivce: FetchedResultsService<Article>?
     private var currentPage: Int = 1
     private var isLoading: Bool = false

@@ -19,6 +19,7 @@
 		7D8762FB25692D6F00843123 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8762FA25692D6F00843123 /* Article.swift */; };
 		7D8763002569355400843123 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8762FF2569355400843123 /* UIViewExtension.swift */; };
 		7D876305256935BD00843123 /* ArticleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D876304256935BD00843123 /* ArticleTableCell.swift */; };
+		7DF333BB25697C4900542601 /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF333BA25697C4900542601 /* NSManagedObjectContextExtension.swift */; };
 		7DFD9B162568291900088740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFD9B152568291900088740 /* AppDelegate.swift */; };
 		7DFD9B202568291900088740 /* SimpleNewsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DFD9B1E2568291900088740 /* SimpleNewsApp.xcdatamodeld */; };
 		7DFD9B222568291A00088740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DFD9B212568291A00088740 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		7D8762FA25692D6F00843123 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		7D8762FF2569355400843123 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		7D876304256935BD00843123 /* ArticleTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableCell.swift; sourceTree = "<group>"; };
+		7DF333BA25697C4900542601 /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
 		7DFD9B122568291900088740 /* SimpleNewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DFD9B152568291900088740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DFD9B1F2568291900088740 /* SimpleNewsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleNewsApp.xcdatamodel; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				7D8762FF2569355400843123 /* UIViewExtension.swift */,
+				7DF333BA25697C4900542601 /* NSManagedObjectContextExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				7D790B7425682E530066F47D /* ApiService.swift in Sources */,
 				7D8762E72569197A00843123 /* ApiError.swift in Sources */,
 				7DFD9B4725682C2900088740 /* CoreDataService.swift in Sources */,
+				7DF333BB25697C4900542601 /* NSManagedObjectContextExtension.swift in Sources */,
 				7D8763002569355400843123 /* UIViewExtension.swift in Sources */,
 				7DFD9B3C25682A0B00088740 /* MainController.swift in Sources */,
 				7D8762F025691E5000843123 /* ArticleStruct.swift in Sources */,

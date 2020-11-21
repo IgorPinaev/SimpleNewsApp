@@ -15,8 +15,8 @@ class Article: NSManagedObject {
     @NSManaged var urlToImage: String?
     @NSManaged var publishedAt: Date?
     
-    static func from(_ articleStruct: ArticleStruct) {
-        let article = Article(context: CoreDataService.instance.context)
+    static func from(_ articleStruct: ArticleStruct, context: NSManagedObjectContext = CoreDataService.instance.context) {
+        let article = Article(context: context)
         
         article.title = articleStruct.title
         article.desc = articleStruct.description

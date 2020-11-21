@@ -26,23 +26,10 @@ class CoreDataService {
         return persistentContainer.viewContext
     }
 
-    func saveContext() {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
-    
-    func clearData(in entity: NSManagedObject.Type) throws {
-        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: entity))
-        let objects = try context.fetch(deleteFetch) as! [NSManagedObject]
-        objects.forEach { context.delete($0) }
-        
-        saveContext()
+    var bcgContext: NSManagedObjectContext {
+        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        context.parent = self.context
+        return context
     }
 }
