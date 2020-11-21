@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D790B7425682E530066F47D /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D790B7325682E530066F47D /* ApiService.swift */; };
+		7D790B7A25682FBA0066F47D /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D790B7925682FBA0066F47D /* EndpointProtocol.swift */; };
+		7D8762DE25690FA300843123 /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8762DD25690FA300843123 /* NewsApi.swift */; };
+		7D8762E42569149000843123 /* ApiServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8762E32569149000843123 /* ApiServiceError.swift */; };
+		7D8762E72569197A00843123 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8762E62569197A00843123 /* ApiError.swift */; };
+		7D8762ED25691E1700843123 /* ArticlesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8762EC25691E1700843123 /* ArticlesResponse.swift */; };
+		7D8762F025691E5000843123 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8762EF25691E5000843123 /* Article.swift */; };
+		7D8762F42569266500843123 /* ArticlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8762F32569266500843123 /* ArticlesService.swift */; };
 		7DFD9B162568291900088740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFD9B152568291900088740 /* AppDelegate.swift */; };
 		7DFD9B202568291900088740 /* SimpleNewsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DFD9B1E2568291900088740 /* SimpleNewsApp.xcdatamodeld */; };
 		7DFD9B222568291A00088740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DFD9B212568291A00088740 /* Assets.xcassets */; };
@@ -17,6 +25,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D790B7325682E530066F47D /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		7D790B7925682FBA0066F47D /* EndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProtocol.swift; sourceTree = "<group>"; };
+		7D8762DD25690FA300843123 /* NewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
+		7D8762E32569149000843123 /* ApiServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceError.swift; sourceTree = "<group>"; };
+		7D8762E62569197A00843123 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		7D8762EC25691E1700843123 /* ArticlesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesResponse.swift; sourceTree = "<group>"; };
+		7D8762EF25691E5000843123 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		7D8762F32569266500843123 /* ArticlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesService.swift; sourceTree = "<group>"; };
 		7DFD9B122568291900088740 /* SimpleNewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DFD9B152568291900088740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DFD9B1F2568291900088740 /* SimpleNewsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleNewsApp.xcdatamodel; sourceTree = "<group>"; };
@@ -39,6 +55,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D790B7225682E400066F47D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7D790B7825682FA90066F47D /* Endpoints */,
+				7D790B7325682E530066F47D /* ApiService.swift */,
+				7D8762F32569266500843123 /* ArticlesService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7D790B7825682FA90066F47D /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				7D790B7925682FBA0066F47D /* EndpointProtocol.swift */,
+				7D8762DD25690FA300843123 /* NewsApi.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		7D8762E12569147A00843123 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D8762E22569147F00843123 /* Errors */,
+				7D8762EC25691E1700843123 /* ArticlesResponse.swift */,
+				7D8762EF25691E5000843123 /* Article.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7D8762E22569147F00843123 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				7D8762E32569149000843123 /* ApiServiceError.swift */,
+				7D8762E62569197A00843123 /* ApiError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		7DFD9B092568291900088740 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +112,7 @@
 		7DFD9B142568291900088740 /* SimpleNewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				7D8762E12569147A00843123 /* Model */,
 				7DFD9B4425682BA900088740 /* Services */,
 				7DFD9B3A256829FC00088740 /* Controllers */,
 				7DFD9B3E25682AEE00088740 /* UI */,
@@ -105,6 +160,7 @@
 		7DFD9B4425682BA900088740 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7D790B7225682E400066F47D /* Network */,
 				7DFD9B4525682C1700088740 /* LocalData */,
 			);
 			path = Services;
@@ -189,9 +245,17 @@
 			files = (
 				7DFD9B162568291900088740 /* AppDelegate.swift in Sources */,
 				7DFD9B4125682B0C00088740 /* MainView.swift in Sources */,
+				7D790B7425682E530066F47D /* ApiService.swift in Sources */,
+				7D8762E72569197A00843123 /* ApiError.swift in Sources */,
 				7DFD9B4725682C2900088740 /* CoreDataService.swift in Sources */,
 				7DFD9B3C25682A0B00088740 /* MainController.swift in Sources */,
+				7D8762F025691E5000843123 /* Article.swift in Sources */,
+				7D8762E42569149000843123 /* ApiServiceError.swift in Sources */,
+				7D8762F42569266500843123 /* ArticlesService.swift in Sources */,
 				7DFD9B202568291900088740 /* SimpleNewsApp.xcdatamodeld in Sources */,
+				7D8762ED25691E1700843123 /* ArticlesResponse.swift in Sources */,
+				7D790B7A25682FBA0066F47D /* EndpointProtocol.swift in Sources */,
+				7D8762DE25690FA300843123 /* NewsApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
