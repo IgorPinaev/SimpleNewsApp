@@ -42,5 +42,7 @@ class CoreDataService {
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: entity))
         let objects = try context.fetch(deleteFetch) as! [NSManagedObject]
         objects.forEach { context.delete($0) }
+        
+        saveContext()
     }
 }

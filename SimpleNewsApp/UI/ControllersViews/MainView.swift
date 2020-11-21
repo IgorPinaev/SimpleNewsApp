@@ -9,6 +9,7 @@ import UIKit
 
 class MainView: UIView {
     let tableView = UITableView()
+    let refreshControl = UIRefreshControl()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,7 +29,14 @@ private extension MainView {
         addSubview(tableView)
         tableView.fillParent()
         
+        tableView.refreshControl = refreshControl
+        
         tableView.register(ArticleTableCell.self, forCellReuseIdentifier: ArticleTableCell.reuseId)
-        tableView.tableFooterView = UIView()
+        
+        let spinner = UIActivityIndicatorView(style: .gray)
+        spinner.startAnimating()
+        spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
+
+        tableView.tableFooterView = spinner
     }
 }
