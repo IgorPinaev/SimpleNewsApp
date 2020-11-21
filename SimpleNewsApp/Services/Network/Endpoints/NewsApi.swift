@@ -10,6 +10,7 @@ import Foundation
 enum NewsApi {
     case getNews(page: Int)
 }
+
 extension NewsApi: EndpointProtocol {
     var host: String {
         return "newsapi.org"

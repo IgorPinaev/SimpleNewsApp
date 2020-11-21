@@ -8,6 +8,8 @@
 import UIKit
 
 class MainView: UIView {
+    let tableView = UITableView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -18,8 +20,15 @@ class MainView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
 private extension MainView {
     func configureView() {
         backgroundColor = .white
+        
+        addSubview(tableView)
+        tableView.fillParent()
+        
+        tableView.register(ArticleTableCell.self, forCellReuseIdentifier: ArticleTableCell.reuseId)
+        tableView.tableFooterView = UIView()
     }
 }

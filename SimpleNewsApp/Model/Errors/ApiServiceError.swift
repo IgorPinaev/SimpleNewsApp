@@ -7,10 +7,25 @@
 
 import Foundation
 
-enum ApiServiceError: String, LocalizedError {
-    case invalidURL = "Ошибка при отправке запроса"
-    case dataNil = "Данные отсутствуют"
-    case decodingError = "Ошибка при обработке запроса"
-    case unknownError = "Неизвестная ошибка"
-    case customError(error: String) = error
+enum ApiServiceError: LocalizedError {
+    case invalidURL
+    case dataNil
+    case decodingError
+    case unknownError
+    case customError(error: String)
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidURL:
+            return "Ошибка при отправке запроса"
+        case .dataNil:
+            return "Данные отсутствуют"
+        case .decodingError:
+            return "Ошибка при обработке запроса"
+        case .unknownError:
+            return "Неизвестная ошибка"
+        case let .customError(error):
+            return error
+        }
+    }
 }

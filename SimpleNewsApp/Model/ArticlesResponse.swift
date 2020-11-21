@@ -8,5 +8,5 @@
 import Foundation
 
 struct ArticlesResponse: Decodable {
-    let articles: [Article]
+    let articles: [ArticleStruct]
 }

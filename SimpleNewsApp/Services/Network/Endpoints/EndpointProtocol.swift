@@ -12,6 +12,7 @@ protocol EndpointProtocol {
     var params: [String: String] { get }
     var headers: [String: String] { get }
 }
+
 extension EndpointProtocol {
     var scheme: String {
         return "https"
