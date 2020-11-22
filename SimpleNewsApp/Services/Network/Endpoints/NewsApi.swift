@@ -26,6 +26,7 @@ extension NewsApi: EndpointProtocol {
             return [
                 "page": page.description,
                 "q": "Apple",
+                "language": "en",
                 "sortBy": "publishedAt"
             ]
         }

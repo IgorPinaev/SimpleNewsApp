@@ -23,18 +23,23 @@ class MainController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        customView.tableView.dataSource = self
-        customView.tableView.delegate = self
+        title = "News"
         
-        customView.tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        
+        configureTable()
         configureFrcService()
-        
         loadArticles()
     }
 }
 
 private extension MainController {
+    func configureTable() {
+        customView.tableView.dataSource = self
+        customView.tableView.delegate = self
+        
+        customView.tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
+    }
+    
     func configureFrcService() {
         frcSerivce = FetchedResultsService(delegate: self, sortDescriptors: [NSSortDescriptor(key: "publishedAt", ascending: false)])
     }
@@ -81,6 +86,10 @@ extension MainController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableCell.reuseId) as! ArticleTableCell
         cell.fill(article)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 240
     }
 }
 
