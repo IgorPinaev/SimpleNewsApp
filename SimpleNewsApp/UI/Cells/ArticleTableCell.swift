@@ -10,10 +10,10 @@ import UIKit
 class ArticleTableCell: UITableViewCell {
     static var reuseId: String { String(describing: self) }
     
-    private var titleLabel = UILabel()
-    private var descriptionLabel = UILabel()
-    private var articleImage = CacheImageView(frame: .zero)
-    private var grayView = UIView()
+    private let titleLabel = UILabel()
+    private let descriptionLabel = UILabel()
+    private let articleImage = CacheImageView(frame: .zero)
+    private let grayView = UIView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -54,6 +54,8 @@ private extension ArticleTableCell {
         articleImage.fillParent()
         
         NSLayoutConstraint.activate([
+            articleImage.heightAnchor.constraint(equalToConstant: 240),
+            
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             

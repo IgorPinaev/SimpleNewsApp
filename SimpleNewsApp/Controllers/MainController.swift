@@ -7,14 +7,15 @@
 
 import UIKit
 import CoreData
+import SafariServices
 
 class MainController: UIViewController {
     private let customView = MainView()
     private let articlesService = ArticlesService()
     
     private var frcSerivce: FetchedResultsService<Article>?
-    private var currentPage: Int = 1
-    private var isLoading: Bool = false
+    private var currentPage = 1
+    private var isLoading = false
     
     override func loadView() {
         view = customView
@@ -25,8 +26,8 @@ class MainController: UIViewController {
         
         title = "News"
         
-        configureTable()
         configureFrcService()
+        configureTable()
         loadArticles()
     }
 }
@@ -53,12 +54,12 @@ private extension MainController {
             DispatchQueue.main.async {
                 self?.customView.refreshControl.endRefreshing()
                 self?.customView.tableView.tableFooterView?.isHidden = true
-            }
-            
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                self?.currentPage += 1
+                
+                if let error = error {
+                    self?.showError(error: error)
+                } else {
+                    self?.currentPage += 1
+                }
             }
         }
     }
@@ -87,15 +88,18 @@ extension MainController: UITableViewDataSource {
         cell.fill(article)
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 240
-    }
 }
 
 extension MainController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         customView.tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let urlString = frcSerivce?.frc.object(at: indexPath).url, let url = URL(string: urlString) else {
+            return
+        }
+
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true, completion: nil)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

@@ -24,7 +24,7 @@ class MainView: UIView {
 
 private extension MainView {
     func configureView() {
-        backgroundColor = .white
+        backgroundColor = UIColor(white: 0, alpha: 0.5)
         
         addSubview(tableView)
         tableView.fillParent()
@@ -37,6 +37,7 @@ private extension MainView {
         spinner.startAnimating()
         spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
 
+        tableView.backgroundColor = UIColor(white: 1, alpha: 0.5)
         tableView.tableFooterView = spinner
     }
 }

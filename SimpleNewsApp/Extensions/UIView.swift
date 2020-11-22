@@ -1,5 +1,5 @@
 //
-//  UIViewExtension.swift
+//  UIView.swift
 //  SimpleNewsApp
 //
 //  Created by Игорь Пинаев on 21.11.2020.
