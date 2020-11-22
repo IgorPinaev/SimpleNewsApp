@@ -16,6 +16,7 @@ class MainController: UIViewController {
     private var frcSerivce: FetchedResultsService<Article>?
     private var currentPage = 1
     private var isLoading = false
+    private var allDone = false
     
     override func loadView() {
         view = customView
@@ -38,7 +39,6 @@ private extension MainController {
         customView.tableView.delegate = self
         
         customView.tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        
     }
     
     func configureFrcService() {
@@ -48,16 +48,19 @@ private extension MainController {
     func loadArticles() {
         isLoading = true
         
+        let beforeLoadingCount = frcSerivce?.frc.fetchedObjects?.count ?? 0
+        
         articlesService.getArticles(from: currentPage) { [weak self] error in
-            self?.isLoading = false
-            
             DispatchQueue.main.async {
+                self?.isLoading = false
+                
                 self?.customView.refreshControl.endRefreshing()
                 self?.customView.tableView.tableFooterView?.isHidden = true
                 
                 if let error = error {
                     self?.showError(error: error)
                 } else {
+                    self?.allDone = self?.frcSerivce?.frc.fetchedObjects?.count ?? 0 == beforeLoadingCount
                     self?.currentPage += 1
                 }
             }
@@ -103,7 +106,7 @@ extension MainController: UITableViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if isLoading { return }
+        if allDone || isLoading { return }
 
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
 
