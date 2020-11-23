@@ -54,8 +54,6 @@ private extension ArticleTableCell {
         articleImage.fillParent()
         
         NSLayoutConstraint.activate([
-            articleImage.heightAnchor.constraint(equalToConstant: 240),
-            
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             
@@ -67,6 +65,8 @@ private extension ArticleTableCell {
     }
     
     func configureView() {
+        backgroundColor = .white
+        
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.boldSystemFont(ofSize: 18)
         titleLabel.textColor = .white

@@ -48,7 +48,7 @@ private extension MainController {
     func loadArticles() {
         isLoading = true
         
-        let beforeLoadingCount = frcSerivce?.frc.fetchedObjects?.count ?? 0
+        let beforeLoadingCount = currentPage == 1 ? 0 : frcSerivce?.frc.fetchedObjects?.count ?? 0
         
         articlesService.getArticles(from: currentPage) { [weak self] error in
             DispatchQueue.main.async {
@@ -114,6 +114,10 @@ extension MainController: UITableViewDelegate {
             customView.tableView.tableFooterView?.isHidden = false
             loadArticles()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 240
     }
 }
 
