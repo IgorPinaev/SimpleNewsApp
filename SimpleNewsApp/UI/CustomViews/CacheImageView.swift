@@ -12,7 +12,7 @@ class CacheImageView: UIImageView {
     private var task: URLSessionTask?
     
     private var activityIndicator: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView()
+        let indicator = UIActivityIndicatorView(style: .gray)
         indicator.hidesWhenStopped = true
         indicator.translatesAutoresizingMaskIntoConstraints = false
         

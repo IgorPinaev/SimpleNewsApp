@@ -75,7 +75,8 @@ private extension ArticleTableCell {
         descriptionLabel.font = UIFont.systemFont(ofSize: 14)
         descriptionLabel.textColor = .white
         
-        articleImage.contentMode = .scaleToFill
+        articleImage.clipsToBounds = true
+        articleImage.contentMode = .scaleAspectFill
         
         grayView.backgroundColor = UIColor(white: 0, alpha: 0.5)
     }
